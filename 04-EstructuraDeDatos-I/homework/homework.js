@@ -15,13 +15,11 @@ Como ejercicio adicional y completamente opcional, al terminar de resolver este 
 */
 
 function nFactorial(n) {
-  if (n === 0 || n === 1) return 1;
-  return n * nFactorial(n - 1);
+  return n <= 1 ? 1 : n * nFactorial(n - 1);
 }
 
 function nFibonacci(n) {
-  if (n < 2) return n;
-  return nFibonacci(n - 2) + nFibonacci(n - 1);
+  return n < 2 ? n : nFibonacci(n - 2) + nFibonacci(n - 1);
 }
 
 /*
@@ -40,13 +38,11 @@ Queue.prototype.enqueue = function (value) {
   this.arr.unshift(value);
 };
 Queue.prototype.dequeue = function () {
-  const poped = this.arr.pop();
-  return poped
+  return this.arr.pop();
 };
 Queue.prototype.size = function () {
   return this.arr.length;
 };
-
 /*⚠️ No modificar nada debajo de esta línea ⚠️*/
 module.exports = {
   Queue,
